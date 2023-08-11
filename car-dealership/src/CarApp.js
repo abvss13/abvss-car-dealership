@@ -58,7 +58,7 @@ function CarApp() {
   return (
     <div className="car-app">
       <header className="app-header">
-        <h1>Car Dealership</h1>
+        
         <div className="search-bar">
           <input
             type="text"
@@ -128,7 +128,7 @@ function CarApp() {
         </div>
       )}
       <footer className="app-footer">
-        <p>&copy; 2023 Car Dealership. All rights reserved.</p>
+        <p>&copy; 2023 Abvss Car Dealership. All rights reserved.</p>
       </footer>
     </div>
   );
