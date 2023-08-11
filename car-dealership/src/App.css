@@ -8,8 +8,8 @@
 /* Global styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #333;
+  color: #fff;
 }
 
 /* App container */
@@ -19,10 +19,36 @@ body {
 
 /* Header styles */
 .app-header {
-  background-color: #333;
+  background-color: #070a0c; /* Darker shade of gray */
   color: #fff;
   padding: 1rem;
   text-align: center;
+}
+
+/* Search bar styles */
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #2c3e50; /* Slightly darker shade of gray */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  background-color: #fff;
+  color: #333;
+}
+
+.search-bar select {
+  padding: 0.5rem;
+  border: none;
+  background-color: #f5f5f5;
 }
 
 /* Car list styles */
@@ -39,7 +65,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 1.5rem;
-  background-color: #fff;
+  background-color: #0a0c0e; /* Slightly darker shade of gray */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
   width: 100%;
@@ -54,15 +80,17 @@ body {
   flex: 1;
 }
 
-/* Contact options styles */
-.contact-options {
-  margin-top: 1rem;
+/* Action buttons styles */
+.action-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
 
-.contact-button {
-  background-color: #333;
+.contact-button,
+.cart-button {
+  background-color: #2c3e50; /* Slightly darker shade of gray */
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -71,13 +99,53 @@ body {
   transition: background-color 0.2s;
 }
 
-.contact-button:hover {
-  background-color: #555;
+.cart-button.add {
+  background-color: #428bca;
+}
+
+.cart-button.remove {
+  background-color: #d9534f;
+}
+
+.contact-button:hover,
+.cart-button:hover {
+  background-color: #34495e; /* Darker shade of gray */
+}
+
+/* Modal styles */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
 }
 
 /* Footer styles */
 .app-footer {
-  background-color: #333;
+  background-color: #0d1114; /* Darker shade of gray */
   color: #fff;
   padding: 0.5rem;
   text-align: center;
