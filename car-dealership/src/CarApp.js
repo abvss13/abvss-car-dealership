@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css'; // Import your CSS styles
+import './App.css';
 
 function CarApp() {
   const [cars, setCars] = useState([]);
@@ -23,22 +23,11 @@ function CarApp() {
     fetchCarData();
   }, []);
 
-  const handleContactClick = (contactInfo) => {
-    setSelectedCar(contactInfo);
-  };
+  const handleContactClick = (contactInfo) => setSelectedCar(contactInfo);
+  const handleModalClose = () => setSelectedCar(null);
 
-  const handleModalClose = () => {
-    setSelectedCar(null);
-  };
-
-  const handleAddToCart = (car) => {
-    setCart([...cart, car]);
-  };
-
-  const handleRemoveFromCart = (car) => {
-    const updatedCart = cart.filter((item) => item !== car);
-    setCart(updatedCart);
-  };
+  const handleAddToCart = (car) => setCart([...cart, car]);
+  const handleRemoveFromCart = (car) => setCart(cart.filter((item) => item !== car));
 
   const filteredCars = cars.filter(
     (car) =>
@@ -47,14 +36,14 @@ function CarApp() {
         car.model.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
-  const sortedCars = [...filteredCars].sort((a, b) => {
-    if (sortBy === 'price-asc') {
-      return parseFloat(a.price.replace(/[^0-9.-]+/g, '')) - parseFloat(b.price.replace(/[^0-9.-]+/g, ''));
-    } else if (sortBy === 'price-desc') {
-      return parseFloat(b.price.replace(/[^0-9.-]+/g, '')) - parseFloat(a.price.replace(/[^0-9.-]+/g, ''));
-    }
-    return 0;
-  });
+  const sortCars = (a, b) => {
+    const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ''));
+    const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ''));
+
+    return sortBy === 'price-asc' ? priceA - priceB : priceB - priceA;
+  };
+
+  const sortedCars = [...filteredCars].sort(sortCars);
 
   return (
     <div className="car-app">
@@ -66,10 +55,7 @@ function CarApp() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <select
-            value={selectedBrand}
-            onChange={(e) => setSelectedBrand(e.target.value)}
-          >
+          <select value={selectedBrand} onChange={(e) => setSelectedBrand(e.target.value)}>
             <option value="">All Brands</option>
             {Array.from(new Set(cars.map((car) => car.brand))).map((brand, index) => (
               <option key={index} value={brand}>
@@ -77,10 +63,7 @@ function CarApp() {
               </option>
             ))}
           </select>
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-          >
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="price-asc">Price: Low to High</option>
             <option value="price-desc">Price: High to Low</option>
           </select>
@@ -98,10 +81,7 @@ function CarApp() {
               <p>Maximum Speed: {car.maximum_speed}</p>
             </div>
             <div className="action-buttons">
-              <button
-                className="contact-button"
-                onClick={() => handleContactClick(car)}
-              >
+              <button className="contact-button" onClick={() => handleContactClick(car)}>
                 Contact Dealer
               </button>
               {cart.includes(car) ? (

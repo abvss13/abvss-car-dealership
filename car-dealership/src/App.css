@@ -59,7 +59,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
-  background-color: #232a4e;
+  background-image: linear-gradient(to bottom right, rgb(71, 80, 78), rgb(139, 53, 125));
 }
 
 .car-item {
@@ -68,7 +68,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 1.5rem;
-  background-color: #0d0d0eec;
+  background-color: rgba(13, 13, 14, 0.925);
   box-shadow: 0 6px 10px rgba(116, 50, 112, 0.884);
   transition: transform 0.2s, background-color 0.2s;
   width: 100%;
@@ -76,8 +76,8 @@ body {
 }
 
 .car-item:hover {
-  transform: translateY(-5px);
-  background-color: #088671;
+  transform: translateY(-35px);
+  background-image: linear-gradient(to bottom right, rgb(22, 212, 164), rgb(192, 27, 165));
 }
 
 .car-details {
