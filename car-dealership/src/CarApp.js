@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css'; // Import your CSS styles
 
 function CarApp() {
   const [cars, setCars] = useState([]);
@@ -58,7 +59,6 @@ function CarApp() {
   return (
     <div className="car-app">
       <header className="app-header">
-        
         <div className="search-bar">
           <input
             type="text"

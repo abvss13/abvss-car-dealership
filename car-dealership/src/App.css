@@ -19,7 +19,7 @@ body {
 
 /* Header styles */
 .app-header {
-  background-color: #070a0c; /* Darker shade of gray */
+  background-color: #070a0c;
   color: #fff;
   padding: 1rem;
   text-align: center;
@@ -32,22 +32,24 @@ body {
   align-items: center;
   margin-top: 1rem;
   padding: 0.5rem;
-  background-color: #2c3e50; /* Slightly darker shade of gray */
+  background-color: #2c3e50;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 10px rgba(235, 233, 233, 0.966);
 }
 
-.search-bar input[type="text"] {
+.search-bar input[type="text"],
+.search-bar select {
   flex: 1;
   padding: 0.5rem;
   border: none;
+}
+
+.search-bar input[type="text"] {
   background-color: #fff;
   color: #333;
 }
 
 .search-bar select {
-  padding: 0.5rem;
-  border: none;
   background-color: #f5f5f5;
 }
 
@@ -57,6 +59,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
+  background-color: #232a4e;
 }
 
 .car-item {
@@ -65,15 +68,16 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 1.5rem;
-  background-color: #0a0c0e; /* Slightly darker shade of gray */
-  box-shadow: 0 4px 8px rgba(47, 95, 226, 0.884); /* Blue shadow */
-  transition: transform 0.2s;
+  background-color: #0d0d0eec;
+  box-shadow: 0 6px 10px rgba(116, 50, 112, 0.884);
+  transition: transform 0.2s, background-color 0.2s;
   width: 100%;
   max-width: 400px;
 }
 
 .car-item:hover {
   transform: translateY(-5px);
+  background-color: #088671;
 }
 
 .car-details {
@@ -90,7 +94,7 @@ body {
 
 .contact-button,
 .cart-button {
-  background-color: #2c3e50; /* Slightly darker shade of gray */
+  background-color: #2c3e50;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -109,7 +113,7 @@ body {
 
 .contact-button:hover,
 .cart-button:hover {
-  background-color: #34495e; /* Darker shade of gray */
+  background-color: #2a7496;
 }
 
 /* Modal styles */
@@ -127,10 +131,10 @@ body {
 }
 
 .modal-content {
-  background-color: #435752; /* Darker shade of gray */
+  background-color: #435752;
   border-radius: 4px;
   padding: 1rem;
-  box-shadow: 0 4px 8px rgba(14, 184, 169, 0.959); /* Blue shadow */
+  box-shadow: 0 4px 8px rgba(14, 184, 169, 0.959);
   position: relative;
 }
 
@@ -145,7 +149,7 @@ body {
 
 /* Footer styles */
 .app-footer {
-  background-color: #0d1114; /* Darker shade of gray */
+  background-color: #0d1114;
   color: #fff;
   padding: 0.5rem;
   text-align: center;
